@@ -18,10 +18,16 @@ public class PrometheusIntegrationApplication {
         SpringApplication.run(PrometheusIntegrationApplication.class, args);
     }
 
-    @GetMapping("/something")
-    public ResponseEntity<String> createLogs() {
-        logger.warn("Just checking");
-        return ResponseEntity.ok().body("All Ok");
+    @GetMapping("/test1")
+    public ResponseEntity<String> createWarnLogs() {
+        logger.warn("Just a WARN log");
+        return ResponseEntity.ok().body("All Ok test1");
+    }
+
+    @GetMapping("/test2")
+    public ResponseEntity<String> createInfoLogs() {
+        logger.info("Just an INFO log");
+        return ResponseEntity.ok().body("All Ok test2");
     }
 
 }
